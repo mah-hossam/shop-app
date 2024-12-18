@@ -44,10 +44,7 @@ export class BackendMockService {
   getProductById(id: string) {
 
     const product = this.#productsList.find(product => product.id === id);
-    if (product) {
-      return of(product)
-    }
-    return of(null); // simulate status 404
+    return of(product);
 
   }
 }
