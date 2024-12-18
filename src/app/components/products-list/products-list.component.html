@@ -1,1 +1,8 @@
-<p>products-list works!</p>
+<main class="product-list">
+    <div *ngFor="let item of products" class="product-card" (click)="navigateToDetails(item.id)">
+        <img [src]="item.img" alt="Product 1" class="product-card_image">
+        <h2 class="product-card_title">{{item.title}}</h2>
+        <p class="product-card_description">{{item.description}}</p>
+        <p class="product-card_price">{{item.price}}</p>
+    </div>
+</main>
