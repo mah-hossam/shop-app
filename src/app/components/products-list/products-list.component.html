@@ -1,8 +1,23 @@
-<main class="product-list">
-    <div *ngFor="let item of products" class="product-card" (click)="navigateToDetails(item.id)">
-        <img [src]="item.img" alt="Product 1" class="product-card_image">
-        <h2 class="product-card_title">{{item.title}}</h2>
-        <p class="product-card_description">{{item.description}}</p>
-        <p class="product-card_price">{{item.price}}</p>
+<main class="container">
+    <!-- Sorting & Filter -->
+    <div class="product-controls">
+        <input type="text" id="filter-name" class="product-controls_filter" placeholder="Filter by name">
+        <select id="sort-options" class="product-controls_sort">
+            <option value="default">Sort By</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+        </select>
+    </div>
+
+
+    <div class="product-list">
+        <div *ngFor="let item of products" class="product-card" (click)="navigateToDetails(item.id)">
+            <img [src]="item.img" alt="Product 1" class="product-card_image">
+            <h2 class="product-card_title">{{item.title}}</h2>
+            <p class="product-card_description">{{item.description}}</p>
+            <p class="product-card_price">{{item.price}}</p>
+        </div>
     </div>
 </main>
