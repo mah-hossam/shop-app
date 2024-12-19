@@ -3,5 +3,5 @@ export interface Iproducts {
     img: string
     title: string,
     description: string,
-    price: string
+    price: number
 }

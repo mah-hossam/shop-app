@@ -1,8 +1,9 @@
 <main class="container">
     <!-- Sorting & Filter -->
     <div class="product-controls">
-        <input type="text" id="filter-name" class="product-controls_filter" placeholder="Filter by name">
-        <select id="sort-options" class="product-controls_sort">
+        <input type="text" id="filter-name" [(ngModel)]="filterText" (input)="filterProducts()"
+            class="product-controls_filter" placeholder="Filter by name">
+        <select id="sort-options" class="product-controls_sort" (change)="sortProducts($event)">
             <option value="default">Sort By</option>
             <option value="name-asc">Name (A-Z)</option>
             <option value="name-desc">Name (Z-A)</option>
@@ -17,7 +18,10 @@
             <img [src]="item.img" alt="Product 1" class="product-card_image">
             <h2 class="product-card_title">{{item.title}}</h2>
             <p class="product-card_description">{{item.description}}</p>
-            <p class="product-card_price">{{item.price}}</p>
+            <p class="product-card_price">{{item.price}} $</p>
         </div>
+    </div>
+    <div *ngIf="products.length ===0">
+        No Products...
     </div>
 </main>
